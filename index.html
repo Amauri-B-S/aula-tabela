@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela</title>
+
+    <style >
+        th, td {border:1px solid black}
+
+        thead {background: red}
+
+        tfoot {background-color: cyan;}
+    </style>
+</head>
+
+<body>
+    <table>
+        <!-- table head > estrutura do cabeçalho-->
+        <thead>   
+            <!-- table row informa a quantidade de linha no cabeçalho ou footer > add atributos da th (mostrado horizontalmente na página)-->
+          <tr>
+            <!-- atributos do cabeçalho (normalmente dispõe em sequência de colunas. ex: prod > col 1; quant > col 2 etc) -->
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Preço</th>
+            <th>Black Friday</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <!-- table data > dados de cada coluna da tabela (obs: deve ter a mesma quantidade das 'th') -->
+
+                <!--colspan e rowspan n devem ser usados em células com dados diferentes pois pode quebrar a tabela  -->
+                
+                <!--add rowspan a td= a célula do 'Sim' irá ocupar 2 linhas em sequência para baixo-->
+                <td>Produto 1</td>
+                <td>2</td>
+                <td>5$</td>
+                <td rowspan="2">Sim</td>
+            </tr>
+            <tr>
+                <td>Produto 2</td>
+                <td>4</td>
+                <td>10$</td>
+                <!-- <td>Sim</td> >> ao add esse dado, quebra a tabela pois o 'sim' do produto 1 já ocupa o espaço desta célula-->
+            </tr>
+            <tr>
+                <td>Produto 3</td>
+                <td>6</td>
+                <td>15$</td>
+                <td>Não</td>
+            </tr>
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <!--add colspan a td= a célula do 'produto 1' irá ocupar 2 colunas em sequência para a direita-->
+                <td colspan="3">Total</td>
+                <td>30</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
